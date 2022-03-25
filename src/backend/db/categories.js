@@ -1,4 +1,10 @@
 import { v4 as uuid } from "uuid";
+import volleyball from "../../assets/images/volleyball.jpg";
+import Basketball from "../../assets/images/Basketball.png";
+import tennis from "../../assets/images/tennis.jpg";
+import baseball from "../../assets/images/baseball.jpg";
+import soccerball from "../../assets/images/soccerball.jpg";
+import golfball from "../../assets/images/golfball.jpg";
 
 /**
  * Category Database can be added here.
@@ -8,20 +14,32 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    categoryName: "Volley Ball",
+    image: volleyball
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    categoryName: "Basket Ball",
+    image: Basketball
   },
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    categoryName: "Tennis Ball",
+    image: tennis
+  },
+  {
+    _id: uuid(),
+    categoryName: "Base Ball",
+    image: baseball
+  },
+  {
+    _id: uuid(),
+    categoryName: "Soccer Ball",
+    image: soccerball
+  },
+  {
+    _id: uuid(),
+    categoryName: "Golf Ball",
+    image: golfball
   },
 ];

@@ -1,0 +1,11 @@
+.arrival-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.horizontal-card-output{
+    margin: 0.5rem;
+    display: flex;
+    flex-grow: 1;
+}

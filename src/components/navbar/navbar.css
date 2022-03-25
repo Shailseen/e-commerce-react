@@ -1,0 +1,27 @@
+.searchbar-mobile-view{
+    display: none;
+    margin: 0rem 1rem 1rem 1rem;
+    max-width: 100%;
+}
+
+.navbar-container{
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 768px){
+    .searchbar-mobile-view{
+        display: block;
+        display: flex;
+        flex-direction: row;
+    }
+    .navbar-container .navbar .searchbar{
+        display: none;
+    }
+}
+.searchbar button{
+    background-color: var(--primary-color);
+}
+.searchbar-style{
+    color: var(--white-color);
+}
