@@ -17,7 +17,7 @@ const Navbar = () => {
         <button><i className="fal fa-search searchbar-style"></i></button>
       </div>
       <div className="cta-button">
-        <button className="button-style-none solid-button" onClick="location.href='/pages/homepage/login-page.html'">Login</button>
+        <button className="button-style-none solid-button">Login</button>
 
         <div className="icon-label-container">
           <a href="/pages/homepage/wishlist-page.html"><i className="far fa-heart"></i></a>

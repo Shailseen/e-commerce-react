@@ -1,5 +1,4 @@
 import { v4 as uuid } from "uuid";
-// import {image18} from "../../assets/index";
 import volleyball from "../../assets/images/volleyball.jpg";
 import Basketball from "../../assets/images/Basketball.png";
 import tennis from "../../assets/images/tennis.jpg";

@@ -3,12 +3,11 @@ import axios from "axios";
 import "./carousel.css";
 const Carousel = () => {
   const [categories, setCategories] = useState([]);
-
+  console.log("hsjbs");
   const fetchCategories = async () => {
     try {
       const response = await axios.get(`/api/categories`);
       setCategories(response.data.categories);
-      console.log(response.data.categories);
     } catch (error) {
       console.log(error);
     }
@@ -16,7 +15,7 @@ const Carousel = () => {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  },[]);
 
   return (
     <section className="menu-container">

@@ -17,7 +17,7 @@ export const Arrival  = () => (
                 <p class="price-card"><span class="original-price">{item.price}</span> <span class="price-discount">{item.discountedPrice}</span> <span class="price-percantage">{item.percantageDiscount}</span></p>
               </div>
               <div class="card-button-container button-grid">
-                <button class="button-style-none solid-button" onclick="location.href='/pages/homepage/product-page.html'">Explore</button>
+                <button class="button-style-none solid-button">Explore</button>
               </div>
              </div>
             </div>
