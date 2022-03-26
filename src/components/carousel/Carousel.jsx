@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./carousel.css";
 const Carousel = () => {
   const [categories, setCategories] = useState([]);
@@ -15,15 +16,16 @@ const Carousel = () => {
 
   useEffect(() => {
     fetchCategories();
-  },[]);
+  }, []);
 
   return (
     <section className="menu-container">
       {categories.map((item) => (
-          <div className="text-overlay-component box-shadow" key={item._id}>
+        <div className="text-overlay-component box-shadow" key={item._id}>
+          <Link to="/shop">
             <img className="img-responsive menu-image" src={item.image} />
-            <span className="badge-card">{item.categoryName}</span>
-          </div>
+          </Link>
+        </div>
       ))}
     </section>
   );

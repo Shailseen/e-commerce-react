@@ -4,7 +4,7 @@ const Navbar = () => {
     <nav className="navbar-container box-shadow">
     <div className="navbar">
       <div className="brand-name">
-        <a className="text-style-none font-lg" href="/pages/homepage/homepage.html"
+        <a className="text-style-none font-lg" 
           ><h4>smasher</h4></a
         >
       </div>
@@ -20,12 +20,12 @@ const Navbar = () => {
         <button className="button-style-none solid-button">Login</button>
 
         <div className="icon-label-container">
-          <a href="/pages/homepage/wishlist-page.html"><i className="far fa-heart"></i></a>
+          <a><i className="far fa-heart"></i></a>
           <div className="badge badge-icon-card">6</div>
         </div>
 
         <div className="icon-label-container">
-          <a href="/pages/homepage/cart-page.html"><i className="far fa-shopping-bag"></i></a>
+          <a><i className="far fa-shopping-bag"></i></a>
           <div className="badge badge-icon-card">6</div>
         </div>
       </div>
