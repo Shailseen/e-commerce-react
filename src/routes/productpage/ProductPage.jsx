@@ -29,7 +29,6 @@ export const ProductPage = () => {
     productList,
     state.includeOutOfStock
   );
-  console.log("hi",includeProducts)
 
   const filterCategoryProducts = getFilterCategoryProducts(
     includeProducts,
