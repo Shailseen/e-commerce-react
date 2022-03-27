@@ -1,34 +1,33 @@
-.menu-container{
-    display: flex;
-    overflow: auto;
-    overflow-y: hidden;
-    justify-content: center;
-    height: fit-content;
-    margin: 1.5rem 0 1.5rem 0;
+.menu-container {
+  display: flex;
+  overflow: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  height: fit-content;
+  margin: 1.5rem 0 1.5rem 0;
 }
-.menu-image{
-    height: 7rem;
-    width: 11rem;
-    opacity: 0.3;
+.menu-image {
+  height: 7rem;
+  width: 11rem;
+  opacity: 0.3;
 }
-.badge-card{
-    position: absolute;
-    font-weight: bold;
-    background-color: var(--seconadry-color);
-    color: var(--black-color);
+.badge-card {
+  font-weight: bold;
+  background-color: var(--seconadry-color);
+  color: var(--black-color);
 }
 
-.text-overlay-component{
-    position: relative;
-    cursor: pointer;
-     margin: 0.5rem; 
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s all ease-in-out;
+.text-overlay-component {
+  position: relative;
+  flex-grow: 1;
+  cursor: pointer;
+  margin: 0.5rem;
+
+  transition: 0.5s all ease-in-out;
 }
-.text-overlay-component:hover{
-  transform: scale(1.1); 
+.text-overlay-component:hover {
+  transform: scale(1.1);
 }
-.menu-image:hover{
-    opacity: 1;
+.menu-image:hover {
+  opacity: 1;
 }

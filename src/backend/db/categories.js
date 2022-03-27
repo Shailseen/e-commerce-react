@@ -15,31 +15,31 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Volley Ball",
-    image: volleyball
+    image: volleyball,
   },
   {
     _id: uuid(),
     categoryName: "Basket Ball",
-    image: Basketball
+    image: Basketball,
   },
   {
     _id: uuid(),
     categoryName: "Tennis Ball",
-    image: tennis
+    image: tennis,
   },
   {
     _id: uuid(),
     categoryName: "Base Ball",
-    image: baseball
+    image: baseball,
   },
   {
     _id: uuid(),
     categoryName: "Soccer Ball",
-    image: soccerball
+    image: soccerball,
   },
   {
     _id: uuid(),
     categoryName: "Golf Ball",
-    image: golfball
+    image: golfball,
   },
 ];

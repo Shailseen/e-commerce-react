@@ -1,18 +1,4 @@
-const footerList = [
-  {
-    icon: "fab fa-github",
-    profileLink: "https://github.com/Shailseen"
-  },
-  {
-    icon: "fab fa-twitter",
-    profileLink: "https://twitter.com/Shailes62273951"
-  },
-  {
-    icon: "fab fa-linkedin-in",
-    profileLink: "https://www.linkedin.com/in/shailesh-kumar-840b28220/"
-  }
-
-]
+import { footerList } from "./footerList";
 
 export const Footer = () => {
   return (
@@ -22,7 +8,7 @@ export const Footer = () => {
       </div>
       <div class="icon-container">
         {footerList.map((item) => 
-        <a class="footer-icon" href={item.profileLink} target="_blank">
+        <a key={item.id} class="footer-icon" href={item.profileLink} target="_blank">
           <i class={item.icon}></i>
         </a>
         )}
