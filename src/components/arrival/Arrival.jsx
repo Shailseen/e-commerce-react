@@ -2,22 +2,22 @@ import { cardData } from "../../routes/homepage/cardData"
 import "./arrival.css"
 
 export const Arrival  = () => (
-        <section class="arrival-container">
+        <section className="arrival-container">
             <>
             {cardData.map((item) =>
-        <div class="horizontal-card-output box-shadow">
-            <div class="horizontal-card">
-              <div class="card-img img-center">
-                <img class="img-responsive with-border" src={item.image}/>
+        <div key={item.id} className="horizontal-card-output box-shadow">
+            <div className="horizontal-card">
+              <div className="card-img img-center">
+                <img className="img-responsive with-border" src={item.image}/>
               </div>
-              <div class="card-description-container">
-              <div class="text-container text-grid">
+              <div className="card-description-container">
+              <div className="text-container text-grid">
                 <h3>{item.productName}</h3>
                 <p>{item.productDescription}</p>
-                <p class="price-card"><span class="original-price">{item.price}</span> <span class="price-discount">{item.discountedPrice}</span> <span class="price-percantage">{item.percantageDiscount}</span></p>
+                <p className="price-card"><span className="original-price">{item.price}</span> <span className="price-discount">{item.discountedPrice}</span> <span className="price-percantage">{item.percantageDiscount}</span></p>
               </div>
-              <div class="card-button-container button-grid">
-                <button class="button-style-none solid-button">Explore</button>
+              <div className="card-button-container button-grid">
+                <button className="button-style-none solid-button">Explore</button>
               </div>
              </div>
             </div>

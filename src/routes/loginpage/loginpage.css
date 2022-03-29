@@ -4,8 +4,7 @@ body{
 :root{
     --login-primary-color: #0066c0;
 }
-.main{
-    border: 1px solid;
+.main-login{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +30,7 @@ body{
 .input-text{
     width: 100%;
     padding: 0rem;
+    border: none;
 }
 .m-b-1r{
     margin-bottom: 1rem;
@@ -79,4 +79,29 @@ body{
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+}
+.login-container .secondary-button{
+    width: 100%;
+}
+.form-utils input{
+    cursor: pointer;
+}
+.form-utils label{
+    cursor: pointer;
+}
+.password-container{
+    display: flex;
+    width: 100%;
+}
+
+.show-hide-pass{
+    padding: 0rem;
+    height: 1.4rem;
+    width: 1.5rem;
+    border: none;
+}
+.wrapper-input{
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-bottom: 1rem;
 }
