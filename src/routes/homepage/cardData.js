@@ -2,6 +2,7 @@ import sportShoes from "../../assets/images/sport.jpg"
 import runningShoes from "../../assets/images/running.jpg"
 export const cardData = [
     {
+        id: 1,
         productName: "Sport Shoes",
         productDescription: "Best soccer shoe",
         price: "$100",
@@ -10,6 +11,7 @@ export const cardData = [
         image: sportShoes
     },
     {
+        id: 2,
         productName: "Running Shoes",
         productDescription: "Boost your stamina",
         price: "$100",
