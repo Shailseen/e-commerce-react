@@ -1,0 +1,29 @@
+:root{
+    --color-green:#388e3c;
+}
+.price-detail-container{
+    grid-area: price-items;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+}
+.w-100{
+    width: 100%;
+}
+.space-btw{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.t-bold{
+    font-weight: bolder;
+}
+.p-b-1rm{
+    padding: 0.5rem 0rem;
+}
+.green-color{
+    color: var(--color-green);
+}
