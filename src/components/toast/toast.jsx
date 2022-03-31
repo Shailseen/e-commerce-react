@@ -14,7 +14,7 @@ export const Toast = () => {
           <i className="fas fa-exclamation-circle"></i>
         )}
       </span>
-      <p>{msg}</p>
+      <p className="toast-msg">{msg}</p>
     </div>
   );
 };
