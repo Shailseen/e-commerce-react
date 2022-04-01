@@ -8,6 +8,7 @@ import { Footer } from "./components/footer/Footer";
 import { ProductPage } from "./routes/productpage/ProductPage";
 import { LoginPage } from "./routes/loginpage/loginpage";
 import { Toast } from "./components/toast/toast";
+import {CartPage} from "./routes/cartpage/cartpage"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/shop" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/mock" element={<Mockman />} />
+          <Route path="/cart" element={<CartPage/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />

@@ -1,0 +1,31 @@
+.body-container-grid{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    "cart-card price-card";
+}
+.card-items-container{
+    grid-area: cart-card;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+.price-detail-container{
+    margin: 1rem 0rem;
+    grid-area: price-card;
+}
+
+@media (max-width:500px) {
+    .body-container-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    .horizontal-card-output{
+        margin: 0rem;
+        margin-top: 1rem;
+        padding: 0rem;
+    }
+    .price-detail-container{
+        width:auto;
+    }
+}

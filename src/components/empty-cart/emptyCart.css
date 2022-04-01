@@ -1,0 +1,15 @@
+.cart-img{
+    width: 15rem;
+    height: 15rem;
+    margin: 1rem 0rem;
+}
+.cart-empty-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.cart-text{
+    color: var(--dark-secondary-color);
+}
