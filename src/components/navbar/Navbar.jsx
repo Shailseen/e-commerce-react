@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to="/cart">
               <i className="far fa-shopping-bag"></i>
             </Link>
-            {cartLength === 0 ? <></> : <div className="badge badge-icon-card">{cartLength}</div>}
+            {cartLength !== 0 && <div className="badge badge-icon-card">{cartLength}</div>}
           </div>
         </div>
       </div>
