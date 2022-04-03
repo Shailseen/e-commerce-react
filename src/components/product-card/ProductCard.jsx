@@ -50,40 +50,9 @@ const ProductCard = ({ item }) => {
             <i className="fas fa-cart-plus"></i> Add to Cart
           </button>
         )}
-        {/* <button
-          className="button-style-none solid-button w-100"
-          onClick={() => addToCartHandler(item)}
-        >
-          <i className="fas fa-cart-plus"></i> Add to Cart
-        </button> */}
-        {/* {cartList.map((it) =>
-          it._id === item._id ? (
-            <button
-              className="button-style-none solid-button w-100"
-              onClick={() => addToCartHandler(item)}
-            >
-              <i className="fas fa-cart-plus"></i> Add to Cart
-            </button>
-          ) : (
-            <button
-              className="button-style-none solid-button w-100"
-              onClick={goToCart}
-            >
-              Go to Cart
-            </button>
-          )
-        )} */}
       </div>
     </div>
   );
 };
 
 export { ProductCard };
-// {cartList.map((it) => it._id === item._id ? <><i className="fas fa-cart-plus"></i>Add to cart</> : <></>)}
-
-// <button
-//   className="button-style-none solid-button w-100"
-//   onClick={() => addToCartHandler(item)}
-// >
-//   <i className="fas fa-cart-plus"></i> Add to Cart
-// </button>
