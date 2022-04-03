@@ -1,15 +1,17 @@
-import { useAuth } from "../../context/auth-context";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useCart } from "../../context/cart-context";
 const Navbar = () => {
+  const {cartList} = useCart()
+  const cartLength = cartList.length;
+  const encodedToken = localStorage.getItem("token");
   return (
     <nav className="navbar-container box-shadow">
       <div className="navbar">
         <div className="brand-name">
-          <a className="text-style-none font-lg">
+          <Link to="/" className="text-style-none font-lg">
             <h4>smasher</h4>
-          </a>
+          </Link>
         </div>
         <div className="searchbar">
           <input
@@ -23,7 +25,7 @@ const Navbar = () => {
         </div>
         <div className="cta-button">
           <Link to="/login">
-            <button className="button-style-none solid-button">Login</button>
+            {encodedToken === null ? <button className="button-style-none solid-button">Login</button> : <button className="button-style-none solid-button">Logout</button>}
           </Link>
 
           <div className="icon-label-container">
@@ -34,10 +36,10 @@ const Navbar = () => {
           </div>
 
           <div className="icon-label-container">
-            <a>
+            <Link to="/cart">
               <i className="far fa-shopping-bag"></i>
-            </a>
-            <div className="badge badge-icon-card">6</div>
+            </Link>
+            {cartLength !== 0 && <div className="badge badge-icon-card">{cartLength}</div>}
           </div>
         </div>
       </div>

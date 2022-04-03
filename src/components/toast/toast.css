@@ -5,6 +5,10 @@
     left: 20%;
     bottom: 5%;
     z-index: 10;
+    background-color: rgba(0, 0, 0, 0.721);
+}
+.toast-msg{
+  color: var(--white-color);
 }
 #hidden{
     visibility: hidden;
