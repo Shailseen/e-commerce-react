@@ -8,7 +8,7 @@ export const CartItems = () => {
     <div className="body-container-grid">
       <div>
         {cartList.map((item) => {
-          return <ProductCartCard item={item} />;
+          return <ProductCartCard item={item} key={item._id} />;
         })}
       </div>
       <CartPriceCard />
