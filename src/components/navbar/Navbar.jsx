@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 const Navbar = () => {
   const {cartList} = useCart()
+  const {wishList} = useWishlist()
   const cartLength = cartList.length;
   const encodedToken = localStorage.getItem("token");
   return (
@@ -29,10 +31,10 @@ const Navbar = () => {
           </Link>
 
           <div className="icon-label-container">
-            <a>
+            <Link to="/wishList">
               <i className="far fa-heart"></i>
-            </a>
-            <div className="badge badge-icon-card">6</div>
+            </Link>
+            {wishList.length !== 0 && <div className="badge badge-icon-card">{wishList.length}</div>}
           </div>
 
           <div className="icon-label-container">

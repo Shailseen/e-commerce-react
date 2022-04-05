@@ -5,7 +5,11 @@ import { useWishlist } from "../../context/wishlist-context";
 import "./productCard.css";
 const ProductCard = ({ item }) => {
   const { addToCartHandler, cartList } = useCart();
-  const {removeWishListHandler, addToWishListHandler, wishList } = useWishlist();
+  const {
+    removeWishListHandler,
+    addToWishListHandler,
+    wishList,
+  } = useWishlist();
   let navigate = useNavigate();
   const goToCart = () => {
     navigate("/cart");
@@ -25,7 +29,10 @@ const ProductCard = ({ item }) => {
 
         <div className="badge-card">
           {wishList.some((it) => it._id === item._id) ? (
-            <i onClick={() => removeWishListHandler(item)} className="fas fa-heart color-heart"></i>
+            <i
+              onClick={() => removeWishListHandler(item)}
+              className="fas fa-heart color-heart"
+            ></i>
           ) : (
             <i
               onClick={() => addToWishListHandler(item)}
