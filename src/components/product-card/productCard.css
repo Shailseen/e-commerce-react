@@ -1,0 +1,18 @@
+.badge-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 50%; */
+  cursor: pointer;
+}
+.fa-heart {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+.fa-heart:hover {
+  color: red;
+}
+
+.color-heart {
+  color: red;
+}

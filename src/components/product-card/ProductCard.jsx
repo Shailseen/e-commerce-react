@@ -1,10 +1,12 @@
 import { useCart } from "../../context/cart-context";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { useWishlist } from "../../context/wishlist-context";
+import "./productCard.css";
 const ProductCard = ({ item }) => {
   const { addToCartHandler, cartList } = useCart();
-  let navigate =useNavigate();
+  const {removeWishListHandler, addToWishListHandler, wishList } = useWishlist();
+  let navigate = useNavigate();
   const goToCart = () => {
     navigate("/cart");
   };
@@ -20,9 +22,17 @@ const ProductCard = ({ item }) => {
           src={item.image}
           alt="product"
         />
-        <span className="badge-card">
-          <i className="fas fa-heart"></i>
-        </span>
+
+        <div className="badge-card">
+          {wishList.some((it) => it._id === item._id) ? (
+            <i onClick={() => removeWishListHandler(item)} className="fas fa-heart color-heart"></i>
+          ) : (
+            <i
+              onClick={() => addToWishListHandler(item)}
+              class="fas fa-heart"
+            ></i>
+          )}
+        </div>
       </div>
       <div className="text-container">
         <h4>{item.title}</h4>

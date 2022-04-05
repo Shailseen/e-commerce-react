@@ -7,6 +7,7 @@ import { ProductProvider } from "./context/product-context";
 import { AuthProvider } from "./context/auth-context";
 import { ToastProvider } from "./context/toast-context";
 import { CartProvider } from "./context/cart-context";
+import { WishListProvider } from "./context/wishlist-context";
 
 // Call make Server
 makeServer();
@@ -14,13 +15,15 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ToastProvider>
-      <CartProvider>
-        <AuthProvider>
-          <ProductProvider>
-            <App />
-          </ProductProvider>
-        </AuthProvider>
-      </CartProvider>
+      <WishListProvider>
+        <CartProvider>
+          <AuthProvider>
+            <ProductProvider>
+              <App />
+            </ProductProvider>
+          </AuthProvider>
+        </CartProvider>
+      </WishListProvider>
     </ToastProvider>
   </React.StrictMode>,
   document.getElementById("root")
