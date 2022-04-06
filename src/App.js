@@ -9,6 +9,7 @@ import { ProductPage } from "./routes/productpage/ProductPage";
 import { LoginPage } from "./routes/loginpage/loginpage";
 import { Toast } from "./components/toast/toast";
 import {CartPage} from "./routes/cartpage/cartpage"
+import { WishListPage } from "./routes/wishlistPage/wishlist-page";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/mock" element={<Mockman />} />
           <Route path="/cart" element={<CartPage/>}/>
+          <Route path="/wishlist" element={<WishListPage/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />

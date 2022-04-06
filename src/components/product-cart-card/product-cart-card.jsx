@@ -1,22 +1,32 @@
 import { useState } from "react";
 import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 import "./product-cart-card.css";
 
-export const ProductCartCard = ({item}) => {
-  const {price,image,categoryName,_id,qty} = item
-  const { removeFromCartHandler,incrementCartHandler,decrementCartHandler } = useCart();
-  const [enable,setEnable] = useState(false)
+export const ProductCartCard = ({ item }) => {
+  const { price, image, categoryName, _id, qty } = item;
+  const {
+    wishList,
+    removeWishListHandler,
+    addToWishListHandler,
+  } = useWishlist();
+  const {
+    removeFromCartHandler,
+    incrementCartHandler,
+    decrementCartHandler,
+  } = useCart();
+  const [enable, setEnable] = useState(false);
   const clickHandler = () => {
     enableHandler();
-    decrementCartHandler(_id)
-  }
-  const clickHandlerIncrement = () =>{
+    decrementCartHandler(_id);
+  };
+  const clickHandlerIncrement = () => {
     enableHandler();
-    incrementCartHandler(_id)
-  }
+    incrementCartHandler(_id);
+  };
   const enableHandler = () => {
-    qty === 1 ? setEnable(true) : setEnable(false)
-  }
+    qty === 1 ? setEnable(true) : setEnable(false);
+  };
 
   return (
     <div className="card-items-container justify-center">
@@ -39,9 +49,20 @@ export const ProductCartCard = ({item}) => {
               </p>
               <div className="quantity-container">
                 <label>Quantity:</label>
-                <button className="outline-round-button" disabled={enable} onClick={clickHandler}>-</button>
+                <button
+                  className="outline-round-button"
+                  disabled={enable}
+                  onClick={clickHandler}
+                >
+                  -
+                </button>
                 <input type="text" className="quantity-input-box" value={qty} />
-                <button className="outline-round-button" onClick={clickHandlerIncrement}>+</button>
+                <button
+                  className="outline-round-button"
+                  onClick={clickHandlerIncrement}
+                >
+                  +
+                </button>
               </div>
             </div>
             <div className="card-button-container">
@@ -51,9 +72,21 @@ export const ProductCartCard = ({item}) => {
               >
                 Remove From Cart
               </button>
-              <button className="button-style-none outline-secondary-button w-100">
-                Move to Wishlist
-              </button>
+              {wishList.some((it) => it._id === item._id) ? (
+                <button
+                  onClick={() => removeWishListHandler(item)}
+                  className="button-style-none outline-secondary-button w-100"
+                >
+                  Remove From Wishlist
+                </button>
+              ) : (
+                <button
+                  onClick={() => addToWishListHandler(item)}
+                  className="button-style-none outline-secondary-button w-100"
+                >
+                  Move to Wishlist
+                </button>
+              )}
             </div>
           </div>
         </div>
