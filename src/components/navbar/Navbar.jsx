@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
+import { useCart,useWislist } from "../../context/index";
 const Navbar = () => {
   const {cartList} = useCart()
   const {wishList} = useWishlist()

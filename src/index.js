@@ -3,11 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { ProductProvider } from "./context/product-context";
-import { AuthProvider } from "./context/auth-context";
-import { ToastProvider } from "./context/toast-context";
-import { CartProvider } from "./context/cart-context";
-import { WishListProvider } from "./context/wishlist-context";
+import{ ProductProvider,AuthProvider,ToastProvider,CartProvider,WishListProvider} from "./context/index"
+
 
 // Call make Server
 makeServer();
