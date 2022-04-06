@@ -1,8 +1,10 @@
+:root{
+  --red-color: red;
+}
 .badge-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: 50%; */
   cursor: pointer;
 }
 .fa-heart {
@@ -10,9 +12,9 @@
   color: var(--secondary-color);
 }
 .fa-heart:hover {
-  color: red;
+  color: var(--red-color);
 }
 
 .color-heart {
-  color: red;
+  color: var(--red-color);
 }

@@ -38,7 +38,18 @@ const WishListProvider = ({ children }) => {
         }));
       }, 2000);
     } catch (error) {
-      console.log(error);
+      setToastVal((prevVal) => ({
+        ...prevVal,
+        msg: `Failed to add ${item.categoryName} to wishlist.`,
+        select: "error-alert",
+        isDisplay: "visible",
+      }));
+      setTimeout(() => {
+        setToastVal((prevVal) => ({
+          ...prevVal,
+          isDisplay: "hidden",
+        }));
+      }, 2000);
     }
 }
 
@@ -64,7 +75,18 @@ const WishListProvider = ({ children }) => {
             }));
           }, 2000);
         }catch(error){
-            console.log(error)
+          setToastVal((prevVal) => ({
+            ...prevVal,
+            msg: `Failt to remove ${item.categoryName} from wishlist.`,
+            select: "error-alert",
+            isDisplay: "visible",
+          }));
+          setTimeout(() => {
+            setToastVal((prevVal) => ({
+              ...prevVal,
+              isDisplay: "hidden",
+            }));
+          }, 2000);
         }
   };
   return (

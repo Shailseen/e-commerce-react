@@ -18,7 +18,7 @@ export const WishListPage = () => {
           <img
             className="img-responsive img-wishlist"
             src={undrawImage}
-            alt="Svg image"
+            alt="Empty wishlit item image"
           />
         ) : (
           wishList.map((item) => <ProductCard item={item} key={item._id} />)
