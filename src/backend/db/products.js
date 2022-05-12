@@ -1,10 +1,16 @@
 import { v4 as uuid } from "uuid";
 import volleyImg1 from "../../assets/images/volleyball.jpg"
 import volleyImg2 from "../../assets/images/volley ball2.jpg"
+import volleyImg3 from "../../assets/images/volleyball3.jpg"
+import volleyImg4 from "../../assets/images/volleyball4.jpg"
 import basketImg1 from "../../assets/images/Basketball.png"
 import basketImg2 from "../../assets/images/basketball2.jpg"
+import basketImg3 from "../../assets/images/basketball3.jpg"
+import basketImg4 from "../../assets/images/basketball4.jpg"
 import tennisImg1 from "../../assets/images/tennis.jpg"
 import tennisImg2 from "../../assets/images/tennisball2.jpg"
+import tennisImg3 from "../../assets/images/tennisball3.jpg"
+import tennisImg4 from "../../assets/images/tennisball4.jpg"
 import baseImg1 from "../../assets/images/baseball.jpg"
 import baseImg2 from "../../assets/images/baseball2.jpg"
 import soccerImg1 from "../../assets/images/soccerball.jpg"
@@ -20,7 +26,7 @@ import golfImg2 from "../../assets/images/golfball2.jpg"
 export const products = [
   {
     _id: uuid(),
-    title: "volley Ball1",
+    title: "Volley Ball1",
     price: "5000",
     categoryName: "volleyBall",
     includeStock: true,
@@ -28,7 +34,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "volley Ball2",
+    title: "Volley Ball2",
     price: "5400",
     categoryName: "volleyBall",
     includeStock: false,
@@ -36,7 +42,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "basket Ball1",
+    title: "Basket Ball1",
     price: "3000",
     categoryName: "basketBall",
     includeStock: false,
@@ -44,7 +50,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "basket Ball2",
+    title: "Basket Ball2",
     price: "3300",
     categoryName: "basketBall",
     includeStock: true,
@@ -52,7 +58,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "tennis Ball1",
+    title: "Tennis Ball1",
     price: "300",
     categoryName: "tennisBall",
     includeStock: false,
@@ -60,7 +66,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "tennis Ball2",
+    title: "Tennis Ball2",
     price: "400",
     categoryName: "tennisBall",
     includeStock: true,
@@ -68,7 +74,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "base Ball1",
+    title: "Base Ball1",
     price: "800",
     categoryName: "baseBall",
     includeStock: false,
@@ -76,7 +82,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "base Ball2",
+    title: "Base Ball2",
     price: "750",
     categoryName: "baseBall",
     includeStock: true,
@@ -84,7 +90,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "soccer Ball1",
+    title: "Soccer Ball1",
     price: "6500",
     categoryName: "soccerBall",
     includeStock: true,
@@ -92,7 +98,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "soccer Ball2",
+    title: "Soccer Ball2",
     price: "6900",
     categoryName: "soccerBall",
     includeStock: false,
@@ -100,7 +106,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "golf Ball1",
+    title: "Golf Ball1",
     price: "5050",
     categoryName: "golfBall",
     includeStock: true,
@@ -108,10 +114,68 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "golf Ball2",
+    title: "Golf Ball2",
     price: "5550",
     categoryName: "golfBall",
     includeStock: false,
     image: golfImg2
+  },
+  
+
+
+  
+
+  {
+    _id: uuid(),
+    title: "Volley Ball3",
+    price: "3654",
+    categoryName: "volleyBall",
+    includeStock: true,
+    image: volleyImg3
+  },
+  {
+    _id: uuid(),
+    title: "Volley Ball4",
+    price: "2812",
+    categoryName: "volleyBall",
+    includeStock: false,
+    image: volleyImg4
+  },
+  {
+    _id: uuid(),
+    title: "Basket Ball3",
+    price: "2903",
+    categoryName: "basketBall",
+    includeStock: false,
+    image: basketImg3
+  },
+  {
+    _id: uuid(),
+    title: "Basket Ball4",
+    price: "3493",
+    categoryName: "basketBall",
+    includeStock: true,
+    image: basketImg4
+  },
+
+
+ 
+
+
+  {
+    _id: uuid(),
+    title: "Tennis Ball3",
+    price: "699",
+    categoryName: "tennisBall",
+    includeStock: false,
+    image: tennisImg3
+  },
+  {
+    _id: uuid(),
+    title: "Tennis Ball4",
+    price: "150",
+    categoryName: "tennisBall",
+    includeStock: true,
+    image: tennisImg4
   },
 ];
