@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./product-cart-card.css";
@@ -15,17 +15,32 @@ export const ProductCartCard = ({ item }) => {
     incrementCartHandler,
     decrementCartHandler,
   } = useCart();
-  const [enable, setEnable] = useState(false);
+  const [incrementEnable, setIncrementEnable] = useState(true);
+  const [decrementEnable,setDecrementEnable] = useState(false);
+  useEffect(() => {
+    incrementEnable ? setIncrementEnable(prev => !prev) : setDecrementEnable(prev => !prev);
+    if(qty===1)
+    {
+      console.log("if...")
+      setDecrementEnable(true)
+    }
+    else if(qty>1)
+    {
+      console.log("else...")
+      setDecrementEnable(false)
+    }
+  },[item])
   const clickHandler = () => {
-    enableHandler();
+    setDecrementEnable(prev => !prev)
     decrementCartHandler(_id);
+    enableHandler();
   };
   const clickHandlerIncrement = () => {
-    enableHandler();
+    setIncrementEnable(prev => !prev)
     incrementCartHandler(_id);
+    enableHandler();
   };
   const enableHandler = () => {
-    qty === 1 ? setEnable(true) : setEnable(false);
   };
 
   return (
@@ -51,7 +66,7 @@ export const ProductCartCard = ({ item }) => {
                 <label>Quantity:</label>
                 <button
                   className="outline-round-button"
-                  disabled={enable}
+                  disabled={decrementEnable}
                   onClick={clickHandler}
                 >
                   -
@@ -60,6 +75,7 @@ export const ProductCartCard = ({ item }) => {
                 <button
                   className="outline-round-button"
                   onClick={clickHandlerIncrement}
+                  disabled={incrementEnable}
                 >
                   +
                 </button>
