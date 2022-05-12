@@ -18,6 +18,8 @@ export const reducer = (state, action) => {
       return { ...state, soccerBall: !state.soccerBall };
     case "GOLF_BALL":
       return { ...state, golfBall: !state.golfBall };
+    case "SLIDER_RATING":
+      return { ...state, sliderRating: action.payload};
     default:
       return state;
   }

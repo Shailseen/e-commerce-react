@@ -1,6 +1,6 @@
 export const getFilterCategoryProducts = (
   productList,
-  { volleyBall, basketBall, tennisBall, baseBall, soccerBall, golfBall }
+  { volleyBall, basketBall, tennisBall, baseBall, soccerBall, golfBall, sliderRating }
 ) => {
   let finalFilteredProduct = [];
   if (volleyBall === true)

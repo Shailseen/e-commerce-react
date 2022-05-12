@@ -66,6 +66,13 @@
 .txt-align-left{
     text-align: left;
 }
-.place-left{
-    margin-left: -3rem;
+.slider-style {
+    width: 15rem;
+}
+.slider-tag {
+    width: 15rem;
+}
+.sorting-list-wrapper{
+    text-align: left;
+    margin: -0.6rem 0rem;
 }

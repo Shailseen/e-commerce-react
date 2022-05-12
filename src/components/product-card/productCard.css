@@ -18,3 +18,12 @@
 .color-heart {
   color: var(--red-color);
 }
+
+.rating-star-color {
+  font-size: x-large;
+  color: rgb(255, 164, 28);
+}
+
+.rating-star {
+  font-size: x-large;
+}
