@@ -9,6 +9,7 @@ import { getIncludeProducts } from "../../filter_function/includeProduct";
 import { getFilterCategoryProducts } from "../../filter_function/filterCategory";
 import { getSliderRating } from "../../filter_function/rating";
 import { useEffect } from "react";
+import { getItemByPriceSlider } from "../../filter_function/price";
 export const ProductPage = () => {
   useEffect(() => {
     document.title = "Smasher | Shop";
@@ -24,7 +25,8 @@ export const ProductPage = () => {
     baseBall: false,
     soccerBall: false,
     golfBall: false,
-    sliderRating: 5,
+    sliderRating: 3,
+    sliderPrice: 3500,
   });
 
   const includeProducts = getIncludeProducts(
@@ -42,9 +44,11 @@ export const ProductPage = () => {
     state.sliderRating
   );
 
-  const sortedProducts = getSortedProducts(sliderRating, state.sortBy);
+  const sliderPrice = getItemByPriceSlider(sliderRating, state.sliderPrice);
 
-  let getFilteredProducts = sortedProducts;
+  const sortedProducts = getSortedProducts(sliderPrice, state.sortBy);
+
+  const getFilteredProducts = sortedProducts;
 
   return (
     <div className="grid-container">
@@ -53,7 +57,7 @@ export const ProductPage = () => {
         <h3>Sports</h3>
         <div className="product-container">
           {getFilteredProducts.map((item) => (
-            <ProductCard item={item} />
+            <ProductCard key={item._id} item={item} />
           ))}
         </div>
       </section>

@@ -27,7 +27,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Volley Ball1",
-    price: "5000",
+    price: 5000,
     categoryName: "volleyBall",
     includeStock: true,
     image: volleyImg1,
@@ -36,7 +36,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Volley Ball2",
-    price: "5400",
+    price: 5400,
     categoryName: "volleyBall",
     includeStock: false,
     image: volleyImg2,
@@ -45,7 +45,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Basket Ball1",
-    price: "3000",
+    price: 3000,
     categoryName: "basketBall",
     includeStock: false,
     image: basketImg1,
@@ -54,7 +54,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Basket Ball2",
-    price: "3300",
+    price: 3300,
     categoryName: "basketBall",
     includeStock: true,
     image: basketImg2,
@@ -63,7 +63,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Tennis Ball1",
-    price: "300",
+    price: 300,
     categoryName: "tennisBall",
     includeStock: false,
     image: tennisImg1,
@@ -72,7 +72,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Tennis Ball2",
-    price: "400",
+    price: 400,
     categoryName: "tennisBall",
     includeStock: true,
     image: tennisImg2,
@@ -81,7 +81,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Base Ball1",
-    price: "800",
+    price: 800,
     categoryName: "baseBall",
     includeStock: false,
     image: baseImg1,
@@ -90,7 +90,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Base Ball2",
-    price: "750",
+    price: 750,
     categoryName: "baseBall",
     includeStock: true,
     image: baseImg2,
@@ -99,7 +99,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Soccer Ball1",
-    price: "6500",
+    price: 6500,
     categoryName: "soccerBall",
     includeStock: true,
     image: soccerImg1,
@@ -108,7 +108,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Soccer Ball2",
-    price: "6900",
+    price: 6900,
     categoryName: "soccerBall",
     includeStock: false,
     image: soccerImg2,
@@ -117,7 +117,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Golf Ball1",
-    price: "5050",
+    price: 5050,
     categoryName: "golfBall",
     includeStock: true,
     image: golfImg1,
@@ -126,7 +126,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Golf Ball2",
-    price: "5550",
+    price: 5550,
     categoryName: "golfBall",
     includeStock: false,
     image: golfImg2,
@@ -135,7 +135,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Volley Ball3",
-    price: "3654",
+    price: 3654,
     categoryName: "volleyBall",
     includeStock: true,
     image: volleyImg3,
@@ -144,7 +144,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Volley Ball4",
-    price: "2812",
+    price: 2812,
     categoryName: "volleyBall",
     includeStock: false,
     image: volleyImg4,
@@ -153,7 +153,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Basket Ball3",
-    price: "2903",
+    price: 2903,
     categoryName: "basketBall",
     includeStock: false,
     image: basketImg3,
@@ -162,7 +162,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Basket Ball4",
-    price: "3493",
+    price: 3493,
     categoryName: "basketBall",
     includeStock: true,
     image: basketImg4,
@@ -171,7 +171,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Tennis Ball3",
-    price: "699",
+    price: 699,
     categoryName: "tennisBall",
     includeStock: false,
     image: tennisImg3,
@@ -180,7 +180,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Tennis Ball4",
-    price: "150",
+    price: 150,
     categoryName: "tennisBall",
     includeStock: true,
     image: tennisImg4,
