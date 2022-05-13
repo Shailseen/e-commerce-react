@@ -5,42 +5,42 @@ import "./product-cart-card.css";
 
 export const ProductCartCard = ({ item }) => {
   const { price, image, categoryName, _id, qty } = item;
+
   const {
     wishList,
     removeWishListHandler,
     addToWishListHandler,
   } = useWishlist();
+
   const {
     removeFromCartHandler,
     incrementCartHandler,
     decrementCartHandler,
   } = useCart();
+
   const [incrementEnable, setIncrementEnable] = useState(true);
-  const [decrementEnable,setDecrementEnable] = useState(false);
+
+  const [decrementEnable, setDecrementEnable] = useState(false);
+
   useEffect(() => {
-    incrementEnable ? setIncrementEnable(prev => !prev) : setDecrementEnable(prev => !prev);
-    if(qty===1)
-    {
-      console.log("if...")
-      setDecrementEnable(true)
+    incrementEnable
+      ? setIncrementEnable((prev) => !prev)
+      : setDecrementEnable((prev) => !prev);
+    if (qty === 1) {
+      setDecrementEnable(true);
+    } else if (qty > 1) {
+      setDecrementEnable(false);
     }
-    else if(qty>1)
-    {
-      console.log("else...")
-      setDecrementEnable(false)
-    }
-  },[item])
+  }, [item]);
+
   const clickHandler = () => {
-    setDecrementEnable(prev => !prev)
+    setDecrementEnable((prev) => !prev);
     decrementCartHandler(_id);
-    enableHandler();
   };
+
   const clickHandlerIncrement = () => {
-    setIncrementEnable(prev => !prev)
+    setIncrementEnable((prev) => !prev);
     incrementCartHandler(_id);
-    enableHandler();
-  };
-  const enableHandler = () => {
   };
 
   return (

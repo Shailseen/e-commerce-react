@@ -4,9 +4,9 @@ import { Poster } from "../../components/poster/Poster";
 import { useEffect } from "react";
 
 export const Homepage = () => {
-  useEffect(()=>{
-    document.title = "Smasher | Home"
-  },[])
+  useEffect(() => {
+    document.title = "Smasher | Home";
+  }, []);
   return (
     <>
       <Carousel />

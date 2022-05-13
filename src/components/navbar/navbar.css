@@ -21,6 +21,12 @@
 }
 .searchbar button{
     background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar > button > i {
+    margin: 0rem;
 }
 .searchbar-style{
     color: var(--white-color);

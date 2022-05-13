@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import axios from "axios";
 import { useToast } from "./toast-context";
+import { useNavigate } from "react-router-dom";
 
 const CartContext = createContext();
 
@@ -10,37 +11,41 @@ const useCart = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
-  const {setToastVal} = useToast();
+  const { setToastVal } = useToast();
   const encodedToken = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   const addToCartHandler = async (item) => {
-    try {
-      const cartData = await axios.post(
-        "/api/user/cart",
-        {
-          product: { ...item },
-        },
-        {
-          headers: {
-            authorization: encodedToken,
+    if (encodedToken === null) navigate("/login");
+    else {
+      try {
+        const cartData = await axios.post(
+          "/api/user/cart",
+          {
+            product: { ...item },
           },
-        }
-      );
-      setCartList(cartData.data.cart);
-      setToastVal((prevVal) => ({
-        ...prevVal,
-        msg: `Added ${item.categoryName} to cart successfully.`,
-        select: "success-alert",
-        isDisplay: "visible",
-      }));
-      setTimeout(() => {
+          {
+            headers: {
+              authorization: encodedToken,
+            },
+          }
+        );
+        setCartList(cartData.data.cart);
         setToastVal((prevVal) => ({
           ...prevVal,
-          isDisplay: "hidden",
+          msg: `Added ${item.categoryName} to cart successfully.`,
+          select: "success-alert",
+          isDisplay: "visible",
         }));
-      }, 2000);
-    } catch (error) {
-      console.log("error", error);
+        setTimeout(() => {
+          setToastVal((prevVal) => ({
+            ...prevVal,
+            isDisplay: "hidden",
+          }));
+        }, 2000);
+      } catch (error) {
+        console.log("error", error);
+      }
     }
   };
 
@@ -111,6 +116,8 @@ const CartProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+
   return (
     <CartContext.Provider
       value={{
@@ -118,7 +125,8 @@ const CartProvider = ({ children }) => {
         addToCartHandler,
         removeFromCartHandler,
         incrementCartHandler,
-        decrementCartHandler
+        decrementCartHandler,
+        setCartList
       }}
     >
       {children}

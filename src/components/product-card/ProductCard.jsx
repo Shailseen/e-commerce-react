@@ -1,5 +1,4 @@
 import { useCart } from "../../context/cart-context";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "../../context/wishlist-context";
 import "./productCard.css";

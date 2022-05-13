@@ -5,14 +5,17 @@ import axios from "axios";
 import { AuthReducer } from "../reducer/AuthReducer";
 import { useState } from "react";
 import { useToast } from "./toast-context";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "./cart-context";
 
 const AuthContext = createContext();
 
 const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }) => {
+  const {cartList,setCartList} = useCart();
   const [authState, authDispatch] = useReducer(AuthReducer, { token: null });
   const { toastVal, setToastVal } = useToast();
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -42,40 +45,37 @@ const AuthProvider = ({ children }) => {
           isDisplay: "hidden",
         }));
       }, 2000);
+      navigate("/shop")
     } catch (error) {
-      if(error.response.status === 404)
-      {
-      setToastVal((prevVal) => ({
-        ...prevVal,
-        msg: "User not found!!",
-        select: "error-alert",
-        isDisplay: "visible",
-      }));
-    }
-    else if(error.response.status === 401){
-      setToastVal((prevVal) => ({
-        ...prevVal,
-        msg: "Unauthorized",
-        select: "error-alert",
-        isDisplay: "visible",
-      }));
-    }
-    else if(error.response.status === 422){
-      setToastVal((prevVal) => ({
-        ...prevVal,
-        msg: "Please enter valid email",
-        select: "error-alert",
-        isDisplay: "visible",
-      }));
-    }
-    else{
-      setToastVal((prevVal) => ({
-        ...prevVal,
-        msg: "Something gone wrong!!",
-        select: "error-alert",
-        isDisplay: "visible",
-      }));
-    }
+      if (error.response.status === 404) {
+        setToastVal((prevVal) => ({
+          ...prevVal,
+          msg: "User not found!!",
+          select: "error-alert",
+          isDisplay: "visible",
+        }));
+      } else if (error.response.status === 401) {
+        setToastVal((prevVal) => ({
+          ...prevVal,
+          msg: "Unauthorized",
+          select: "error-alert",
+          isDisplay: "visible",
+        }));
+      } else if (error.response.status === 422) {
+        setToastVal((prevVal) => ({
+          ...prevVal,
+          msg: "Please enter valid email",
+          select: "error-alert",
+          isDisplay: "visible",
+        }));
+      } else {
+        setToastVal((prevVal) => ({
+          ...prevVal,
+          msg: "Something gone wrong!!",
+          select: "error-alert",
+          isDisplay: "visible",
+        }));
+      }
       setTimeout(() => {
         setToastVal((prevVal) => ({
           ...prevVal,
@@ -84,6 +84,24 @@ const AuthProvider = ({ children }) => {
       }, 2000);
     }
   };
+
+
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    setToastVal((prevVal) => ({
+      ...prevVal,
+      msg: `Logout Successfully!`,
+      select: "success-alert",
+      isDisplay: "visible",
+    }));
+    setTimeout(() => {
+      setToastVal((prevVal) => ({
+        ...prevVal,
+        isDisplay: "hidden",
+      }));
+    }, 2000);
+    setCartList([]);
+}
 
   return (
     <AuthContext.Provider
@@ -94,6 +112,7 @@ const AuthProvider = ({ children }) => {
         changeHandler,
         formData,
         setFormData,
+        logoutHandler,
       }}
     >
       {children}
