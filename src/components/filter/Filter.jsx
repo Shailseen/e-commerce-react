@@ -11,25 +11,29 @@ export const Filter = ({ dispatch, state }) => {
       </div>
       <div className="sorting-container border-bottom">
         <h4 className="txt-align-left">Sort Price</h4>
-        <input
-          className="place-left"
-          type="radio"
-          name="sortData"
-          id="Low to high"
-          checked={state.sortBy === "LOW_TO_HIGH"}
-          onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
-        />
-        <label for="Low to high">Low To High</label>
+        <div className="sorting-list-wrapper">
+          <input
+            className="place-left"
+            type="radio"
+            name="sortData"
+            id="Low to high"
+            checked={state.sortBy === "LOW_TO_HIGH"}
+            onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
+          />
+          <label htmlFor="Low to high">Low To High</label>
+        </div>
         <br />
-        <input
-          className="place-left"
-          type="radio"
-          id="High to low"
-          name="sortData"
-          checked={state.sortBy === "HIGH_TO_LOW"}
-          onChange={() => dispatch({ type: "HIGH_TO_LOW" })}
-        />
-        <label for="High to low">High To Low</label>
+        <div className="sorting-list-wrapper">
+          <input
+            className="place-left"
+            type="radio"
+            id="High to low"
+            name="sortData"
+            checked={state.sortBy === "HIGH_TO_LOW"}
+            onChange={() => dispatch({ type: "HIGH_TO_LOW" })}
+          />
+          <label htmlFor="High to low">High To Low</label>
+        </div>
       </div>
 
       <div className="cateogry-container border-bottom">
@@ -41,7 +45,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={includeOutOfStock}
             onChange={() => dispatch({ type: "INCLUDE_OUT_OF_STOCK" })}
           />
-          <label for="Include out of stock">Include out of stock</label>
+          <label htmlFor="Include out of stock">Include out of stock</label>
         </li>
       </div>
       <div className="category-container border-bottom">
@@ -54,7 +58,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.volleyBall}
             onChange={() => dispatch({ type: "VOLLEY_BALL" })}
           />
-          <label for="Volley ball">Volley Ball</label>
+          <label htmlFor="Volley ball">Volley Ball</label>
         </li>
 
         <li className="cateogry-list-container list-style-none">
@@ -64,7 +68,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.basketBall}
             onChange={() => dispatch({ type: "BASKET_BALL" })}
           />
-          <label for="Basket ball">Basket Ball</label>
+          <label htmlFor="Basket ball">Basket Ball</label>
         </li>
 
         <li className="cateogry-list-container list-style-none">
@@ -74,7 +78,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.tennisBall}
             onChange={() => dispatch({ type: "TENNIS_BALL" })}
           />
-          <label for="Tennis ball">Tennis Ball</label>
+          <label htmlFor="Tennis ball">Tennis Ball</label>
         </li>
 
         <li className="cateogry-list-container list-style-none">
@@ -84,7 +88,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.baseBall}
             onChange={() => dispatch({ type: "BASE_BALL" })}
           />
-          <label for="Base ball">Base Ball</label>
+          <label htmlFor="Base ball">Base Ball</label>
         </li>
 
         <li className="cateogry-list-container list-style-none">
@@ -94,7 +98,7 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.soccerBall}
             onChange={() => dispatch({ type: "SOCCER_BALL" })}
           />
-          <label for="Soccer ball">Soccer Ball</label>
+          <label htmlFor="Soccer ball">Soccer Ball</label>
         </li>
 
         <li className="cateogry-list-container list-style-none">
@@ -104,8 +108,60 @@ export const Filter = ({ dispatch, state }) => {
             checked={state.golfBall}
             onChange={() => dispatch({ type: "GOLF_BALL" })}
           />
-          <label for="Golf ball">Golf Ball</label>
+          <label htmlFor="Golf ball">Golf Ball</label>
         </li>
+      </div>
+
+      <div className="category-container border-bottom">
+        <h4 className="txt-align-left">Rating</h4>
+
+        <div className="slider-container">
+          <div className="slider-tag">
+            <span className="slider-tag-value">1</span>
+            <span className="slider-tag-value">2</span>
+            <span className="slider-tag-value">3</span>
+            <span className="slider-tag-value">4</span>
+            <span className="slider-tag-value">5</span>
+          </div>
+          <div>
+            <input
+              type="range"
+              onChange={(e) =>
+                dispatch({ type: "SLIDER_RATING", payload: e.target.value })
+              }
+              min="1"
+              max="5"
+              value={state.sliderRating}
+              className="slider-style"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="category-container border-bottom">
+        <h4 className="txt-align-left">Price</h4>
+
+        <div className="slider-container">
+          <div className="slider-tag">
+            <span className="slider-tag-value">100</span>
+            <span className="slider-tag-value">2000</span>
+            <span className="slider-tag-value">3500</span>
+            <span className="slider-tag-value">5000</span>
+            <span className="slider-tag-value">7000</span>
+          </div>
+          <div>
+            <input
+              type="range"
+              onChange={(e) =>
+                dispatch({ type: "SLIDER_PRICE", payload: e.target.value })
+              }
+              min="100"
+              max="7000"
+              value={state.sliderPrice}
+              className="slider-style"
+            />
+          </div>
+        </div>
       </div>
     </aside>
   );

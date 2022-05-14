@@ -1,31 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import "./product-cart-card.css";
 
 export const ProductCartCard = ({ item }) => {
   const { price, image, categoryName, _id, qty } = item;
+
   const {
     wishList,
     removeWishListHandler,
     addToWishListHandler,
   } = useWishlist();
+
   const {
     removeFromCartHandler,
     incrementCartHandler,
     decrementCartHandler,
   } = useCart();
-  const [enable, setEnable] = useState(false);
+
+  const [incrementEnable, setIncrementEnable] = useState(true);
+
+  const [decrementEnable, setDecrementEnable] = useState(false);
+
+  useEffect(() => {
+    incrementEnable
+      ? setIncrementEnable((prev) => !prev)
+      : setDecrementEnable((prev) => !prev);
+    if (qty === 1) {
+      setDecrementEnable(true);
+    } else if (qty > 1) {
+      setDecrementEnable(false);
+    }
+  }, [item]);
+
   const clickHandler = () => {
-    enableHandler();
+    setDecrementEnable((prev) => !prev);
     decrementCartHandler(_id);
   };
+
   const clickHandlerIncrement = () => {
-    enableHandler();
+    setIncrementEnable((prev) => !prev);
     incrementCartHandler(_id);
-  };
-  const enableHandler = () => {
-    qty === 1 ? setEnable(true) : setEnable(false);
   };
 
   return (
@@ -51,7 +66,7 @@ export const ProductCartCard = ({ item }) => {
                 <label>Quantity:</label>
                 <button
                   className="outline-round-button"
-                  disabled={enable}
+                  disabled={decrementEnable}
                   onClick={clickHandler}
                 >
                   -
@@ -60,6 +75,7 @@ export const ProductCartCard = ({ item }) => {
                 <button
                   className="outline-round-button"
                   onClick={clickHandlerIncrement}
+                  disabled={incrementEnable}
                 >
                   +
                 </button>

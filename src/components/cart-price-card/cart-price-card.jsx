@@ -27,7 +27,7 @@ export const CartPriceCard = () => {
         <label className="t-bold">TOTAL AMOUNT</label>
         <label className="t-bold">{totalAmount}</label>
       </div>
-      <p className="green-color">You will save ₹999 on this order</p>
+      <p className="green-color">You will save ₹{discountPrice} on this order</p>
       <button className="button-style-none solid-button w-100">
         PLACE ORDER
       </button>

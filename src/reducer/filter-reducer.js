@@ -1,4 +1,6 @@
 export const reducer = (state, action) => {
+  if(action.type === "SLIDER_PRICE")
+  console.log(action.payload)
   switch (action.type) {
     case "LOW_TO_HIGH":
       return { ...state, sortBy: action.type };
@@ -18,6 +20,10 @@ export const reducer = (state, action) => {
       return { ...state, soccerBall: !state.soccerBall };
     case "GOLF_BALL":
       return { ...state, golfBall: !state.golfBall };
+    case "SLIDER_RATING":
+      return { ...state, sliderRating: action.payload };
+    case "SLIDER_PRICE":
+      return { ...state, sliderPrice: action.payload };
     default:
       return state;
   }
