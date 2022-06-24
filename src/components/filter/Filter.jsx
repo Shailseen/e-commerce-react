@@ -1,5 +1,5 @@
 import "./filter.css";
-export const Filter = ({ dispatch, state }) => {
+export const Filter = ({displayType, dispatch, state }) => {
   const { includeOutOfStock } = state;
   return (
     <aside className="filter box-shadow">
@@ -9,32 +9,48 @@ export const Filter = ({ dispatch, state }) => {
           CLEAR
         </a>
       </div>
+      { displayType==="desktop" &&
       <div className="sorting-container border-bottom">
         <h4 className="txt-align-left">Sort Price</h4>
-        <div className="sorting-list-wrapper">
-          <input
-            className="place-left"
-            type="radio"
-            name="sortData"
-            id="Low to high"
-            checked={state.sortBy === "LOW_TO_HIGH"}
-            onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
-          />
-          <label htmlFor="Low to high">Low To High</label>
-        </div>
-        <br />
-        <div className="sorting-list-wrapper">
-          <input
-            className="place-left"
-            type="radio"
-            id="High to low"
-            name="sortData"
-            checked={state.sortBy === "HIGH_TO_LOW"}
-            onChange={() => dispatch({ type: "HIGH_TO_LOW" })}
-          />
-          <label htmlFor="High to low">High To Low</label>
+        <div className="sortby-flex-container">
+          <div className="sorting-list-wrapper">
+            <input
+              className="place-left"
+              type="radio"
+              name="sortData"
+              id="popularity"
+              checked={state.sortBy === "POPULARITY"}
+              onChange={() => dispatch({ type: "POPULARITY" })}
+            />
+            <label htmlFor="popularity">Popularity</label>
+          </div>
+
+          <div className="sorting-list-wrapper">
+            <input
+              className="place-left"
+              type="radio"
+              name="sortData"
+              id="Low to high"
+              checked={state.sortBy === "LOW_TO_HIGH"}
+              onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
+            />
+            <label htmlFor="Low to high">Low To High</label>
+          </div>
+
+          <div className="sorting-list-wrapper">
+            <input
+              className="place-left"
+              type="radio"
+              id="High to low"
+              name="sortData"
+              checked={state.sortBy === "HIGH_TO_LOW"}
+              onChange={() => dispatch({ type: "HIGH_TO_LOW" })}
+            />
+            <label htmlFor="High to low">High To Low</label>
+          </div>
         </div>
       </div>
+}
 
       <div className="cateogry-container border-bottom">
         <h4 className="txt-align-left">Categories</h4>

@@ -1,7 +1,8 @@
 export const reducer = (state, action) => {
-  if(action.type === "SLIDER_PRICE")
-  console.log(action.payload)
+ 
   switch (action.type) {
+    case "POPULARITY":
+      return {...state,sortBy: action.type};
     case "LOW_TO_HIGH":
       return { ...state, sortBy: action.type };
     case "HIGH_TO_LOW":

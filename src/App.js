@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.css"
 import { Navbar } from "./components";
 import { Footer } from "./components/footer/Footer";
 import { Toast } from "./components/toast/toast";
