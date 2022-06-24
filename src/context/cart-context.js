@@ -90,7 +90,6 @@ const CartProvider = ({ children }) => {
         }
       );
       setCartList(incrementCartData.data.cart);
-      console.log(incrementCartData.data.cart);
     } catch (error) {
       console.log(error);
     }

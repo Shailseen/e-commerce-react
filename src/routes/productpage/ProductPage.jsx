@@ -2,9 +2,7 @@ import "./product-page.css";
 import { Filter } from "../../components/filter/Filter";
 import { ProductCard } from "../../components";
 import { useProduct } from "../../context/product-context";
-import { useReducer } from "react";
 import { getSortedProducts } from "../../filter_function/index";
-import { reducer } from "../../reducer/filter-reducer";
 import { getIncludeProducts } from "../../filter_function/includeProduct";
 import { getFilterCategoryProducts } from "../../filter_function/filterCategory";
 import { getSliderRating } from "../../filter_function/rating";
@@ -16,22 +14,11 @@ export const ProductPage = () => {
   useEffect(() => {
     document.title = "Smasher | Shop";
   }, []);
-  const { productList } = useProduct();
+  const { productList,state,dispatch } = useProduct();
 
   const [isPortalOpen, setIsPortalOpen] = useState(false);
 
-  const [state, dispatch] = useReducer(reducer, {
-    sortBy: "POPULARITY",
-    includeOutOfStock: false,
-    volleyBall: false,
-    basketBall: false,
-    tennisBall: false,
-    baseBall: false,
-    soccerBall: false,
-    golfBall: false,
-    sliderRating: 3,
-    sliderPrice: 3500,
-  });
+
 
   const sortByOptionSelected = (e) => {
     const dispatchType = e.target.value.toUpperCase();
@@ -96,3 +83,5 @@ export const ProductPage = () => {
     </>
   );
 };
+
+
